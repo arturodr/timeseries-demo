@@ -78,7 +78,7 @@ st.title("Awesome Time Series Syntheic Data Generator")
 @st.cache
 def get_country_gdppc_df():
     df = pd.read_csv(
-        "./examples/streamlit/GDP_per_capita_countries.csv", encoding="utf-8-sig"
+        "./GDP_per_capita_countries.csv", encoding="utf-8-sig"
     )
     return df
 
@@ -219,7 +219,7 @@ if is_noise:
 # select time period
 
 st.subheader("Input start date and end date")
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 with col1:
     start_date = st.date_input(
         "Start data", datetime.date(2019, 1, 1), min_value=datetime.date(2012, 1, 1)
@@ -316,7 +316,7 @@ st.markdown(get_table_download_link(df_vis), unsafe_allow_html=True)
 # -------------
 # show dataframe
 
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 with col1:
     show_base_df = st.checkbox("Show dataframe")
 with col2:
